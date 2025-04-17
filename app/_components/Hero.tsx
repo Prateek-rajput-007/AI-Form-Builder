@@ -1,9 +1,11 @@
 import MagicButton from '@/components/ui/MagicButton';
 import { FaLocationArrow } from 'react-icons/fa';
-import { AtomIcon, Edit, Share2 } from 'lucide-react'
+import { AtomIcon, Edit, Share2 } from 'lucide-react';
 import { Button } from "@/components/ui/moving-border";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import React from 'react'
+import { SignInButton, useUser } from '@clerk/nextjs';
+import { usePathname } from 'next/navigation';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 
 function Hero() {
