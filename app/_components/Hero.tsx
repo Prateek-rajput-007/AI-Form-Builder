@@ -63,7 +63,7 @@ function Hero() {
               borderRadius: `calc(1.75rem* 0.96)`,
             }}
             className="block w-full rounded px-12 py-3 text-sm font-medium text-primary shadow hover:text-purple-700 focus:outline-none focus:ring active:text-purple-500 sm:w-auto"
-            href="#How it Works">
+            href="#how-it-works">
           Learn More
         </Button>
       </div>
