@@ -4,9 +4,17 @@ import { AtomIcon, Edit, Share2 } from 'lucide-react'
 import { Button } from "@/components/ui/moving-border";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import React from 'react'
+import Link from 'next/link';
 
 function Hero() {
   return (
+    const { isSignedIn } = useUser();
+  const path = usePathname();
+
+  useEffect(() => {
+    console.log("Current path:", path);
+  }, [path]);
+
     <section className="">
   <div className=" mx-auto max-w-screen-xl z-30 px-4 pt-32 lg:flex bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
     <div className="mx-auto text-center">
@@ -21,20 +29,29 @@ function Hero() {
       </p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
-        <Button duration={Math.floor(Math.random() * 1000) + 1000}
-            borderRadius="1.95rem" style={{
-              //   add these two
-              //   you can generate the color from here https://cssgradient.io/
-              background: "rgb(2,0,36)",
-              backgroundColor:
-                "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(15,70,179,1) 35%)",
-              // add this border radius to make it more rounded so that the moving border is more realistic
-              borderRadius: `calc(1.75rem* 0.96)`,
-            }}
-            className="block w-full rounded  px-12 py-3 text-sm font-medium text-white shadow hover:bg-purple-700 focus:outline-none focus:ring active:bg-purple-500 sm:w-auto">
-          Create Form
-        </Button>
-
+         {isSignedIn ? (
+              <Link href="/dashboard" passHref>
+                <Button
+                  duration={Math.floor(Math.random() * 1000) + 1000}
+                  borderRadius="1.95rem"
+                  style={{ borderRadius: `calc(1.75rem * 0.96)` }}
+                  className="rounded px-12 py-3 text-sm font-medium text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow hover:opacity-90 focus:outline-none focus:ring active:opacity-75"
+                >
+                  Create Form
+                </Button>
+              </Link>
+            ) : (
+              <SignInButton>
+                <Button
+                  duration={Math.floor(Math.random() * 1000) + 1000}
+                  borderRadius="1.95rem"
+                  style={{ borderRadius: `calc(1.75rem * 0.96)` }}
+                  className="rounded px-12 py-3 text-sm font-medium text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow hover:opacity-90 focus:outline-none focus:ring active:opacity-75"
+                >
+                  Create Form
+                </Button>
+              </SignInButton>
+            )}
        
         <Button duration={Math.floor(Math.random() * 1000) + 1000}
             borderRadius="1.95rem" style={{
@@ -46,7 +63,7 @@ function Hero() {
               borderRadius: `calc(1.75rem* 0.96)`,
             }}
             className="block w-full rounded px-12 py-3 text-sm font-medium text-primary shadow hover:text-purple-700 focus:outline-none focus:ring active:text-purple-500 sm:w-auto"
-            href="">
+            href="#How it Works">
           Learn More
         </Button>
       </div>
