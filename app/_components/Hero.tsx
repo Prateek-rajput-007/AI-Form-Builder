@@ -1,132 +1,131 @@
-"use client";
-
 import MagicButton from '@/components/ui/MagicButton';
 import { FaLocationArrow } from 'react-icons/fa';
-import { AtomIcon, Edit, Share2 } from 'lucide-react';
+import { AtomIcon, Edit, Share2 } from 'lucide-react'
 import { Button } from "@/components/ui/moving-border";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { SignInButton, useUser } from '@clerk/nextjs';
-import { usePathname } from 'next/navigation';
-import React, { useEffect } from 'react';
-import Link from 'next/link';
+import React from 'react'
 
 function Hero() {
-  const { isSignedIn } = useUser();
-  const path = usePathname();
-
-  useEffect(() => {
-    console.log("Current path:", path);
-  }, [path]);
-
   return (
-    <section>
-      {/* Hero Section */}
-      <div className="mx-auto max-w-screen-xl px-4 pt-32 lg:flex bg-grid-pattern">
-        <div className="text-center mx-auto">
-          <TextGenerateEffect
+    <section className="">
+  <div className=" mx-auto max-w-screen-xl z-30 px-4 pt-32 lg:flex bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
+    <div className="mx-auto text-center">
+    <TextGenerateEffect
             words="Create Your Form With Artificial Intelligence"
-            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+            className= "text-center text-[40px] md:text-5xl lg:text-6xl"
+            
           />
 
-          <p className="mt-4 text-gray-500 sm:text-xl">
-            Quickly generate smart, customizable forms with just a topic using our AI-powered form builder.
-          </p>
+      <p className="mt-4 sm:text-xl/relaxed text-gray-500">
+        Create your form with our AI powered form builder. With just a topic, our AI will generate a form for you to use.
+      </p>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            {/* Authenticated / Non-authenticated CTA */}
-            {isSignedIn ? (
-              <Link href="/dashboard" passHref>
-                <Button
-                  duration={Math.floor(Math.random() * 1000) + 1000}
-                  borderRadius="1.95rem"
-                  style={{ borderRadius: `calc(1.75rem * 0.96)` }}
-                  className="rounded px-12 py-3 text-sm font-medium text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow hover:opacity-90 focus:outline-none focus:ring active:opacity-75"
-                >
-                  Create Form
-                </Button>
-              </Link>
-            ) : (
-              <SignInButton>
-                <Button
-                  duration={Math.floor(Math.random() * 1000) + 1000}
-                  borderRadius="1.95rem"
-                  style={{ borderRadius: `calc(1.75rem * 0.96)` }}
-                  className="rounded px-12 py-3 text-sm font-medium text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow hover:opacity-90 focus:outline-none focus:ring active:opacity-75"
-                >
-                  Create Form
-                </Button>
-              </SignInButton>
-            )}
+      <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <Button duration={Math.floor(Math.random() * 1000) + 1000}
+            borderRadius="1.95rem" style={{
+              //   add these two
+              //   you can generate the color from here https://cssgradient.io/
+              background: "rgb(2,0,36)",
+              backgroundColor:
+                "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(15,70,179,1) 35%)",
+              // add this border radius to make it more rounded so that the moving border is more realistic
+              borderRadius: `calc(1.75rem* 0.96)`,
+            }}
+            className="block w-full rounded  px-12 py-3 text-sm font-medium text-white shadow hover:bg-purple-700 focus:outline-none focus:ring active:bg-purple-500 sm:w-auto">
+          Create Form
+        </Button>
 
-            {/* Learn More CTA */}
-            <Link href="#how-it-works" passHref>
-              <Button
-                duration={Math.floor(Math.random() * 1000) + 1000}
-                borderRadius="1.95rem"
-                style={{ borderRadius: `calc(1.75rem * 0.96)` }}
-                className="rounded px-12 py-3 text-sm font-medium text-primary border border-primary shadow hover:text-purple-700 focus:outline-none focus:ring active:text-purple-500"
-              >
-                Learn More
-              </Button>
-            </Link>
-          </div>
-        </div>
+       
+        <Button duration={Math.floor(Math.random() * 1000) + 1000}
+            borderRadius="1.95rem" style={{
+              //   add these two
+              //   you can generate the color from here https://cssgradient.io/
+              
+              
+              // add this border radius to make it more rounded so that the moving border is more realistic
+              borderRadius: `calc(1.75rem* 0.96)`,
+            }}
+            className="block w-full rounded px-12 py-3 text-sm font-medium text-primary shadow hover:text-purple-700 focus:outline-none focus:ring active:text-purple-500 sm:w-auto"
+            href="">
+          Learn More
+        </Button>
       </div>
+    </div>
+  </div>
+  <section className="bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
+  <div className="mx-auto max-w-screen-xl px-4 py-56">
+    <div className="mx-auto max-w-lg text-center">
+      <h2 className="text-3xl font-bold sm:text-4xl">How it Works</h2>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="bg-grid-pattern py-24">
-        <div className="max-w-screen-xl mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold sm:text-4xl">How It Works</h2>
-            <p className="mt-4 text-gray-500">
-              Turn your ideas into interactive forms in seconds. Share and manage responses effortlessly with AI-driven form creation.
-            </p>
-          </div>
+      <p className="mt-4 text-gray-500">
+      Our SaaS app lets you quickly create forms from any prompt, share them via a unique link, and securely save all responses in the database for easy tracking and analysis
+      </p>
+    </div>
 
-          {/* Steps */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Step 1 */}
-            <div className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/20 hover:shadow-pink-500/20">
-              <AtomIcon className="h-8 w-8" />
-              <h3 className="mt-4 text-xl font-bold text-black">Write a Prompt</h3>
-              <p className="mt-1 text-sm text-gray-600">
-                Describe your form's purpose and let AI instantly create a ready-to-use form tailored for you.
-              </p>
-            </div>
+    <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <a
+        className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+        href="#"
+      >
+       <AtomIcon className='h-8 w-8'/>
 
-            {/* Step 2 */}
-            <div className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/20 hover:shadow-pink-500/20">
-              <Edit className="h-8 w-8" />
-              <h3 className="mt-4 text-xl font-bold text-black">Edit & Customize</h3>
-              <p className="mt-1 text-sm text-gray-600">
-                Easily adjust your form by adding, removing, or rearranging fields to match your needs.
-              </p>
-            </div>
+        <h2 className="mt-4 text-xl font-bold text-black">Write promot for your form</h2>
 
-            {/* Step 3 */}
-            <div className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/20 hover:shadow-pink-500/20">
-              <Share2 className="h-8 w-8" />
-              <h3 className="mt-4 text-xl font-bold text-black">Share & Collect</h3>
-              <p className="mt-1 text-sm text-gray-600">
-                Share your form via a unique link and start collecting and analyzing responses instantly.
-              </p>
-            </div>
-          </div>
+        <p className="mt-1 text-sm text-gray-600">
+        Input your prompt, and our AI-powered tool creates a fully customizable form tailored to your needs.
+        </p>
+      </a>
 
-          {/* CTA Button */}
-          <div className="mt-12 text-center">
-            <Link href={isSignedIn ? "/dashboard" : "/sign-in"} passHref>
-              <MagicButton
-                otherClasses="border-2 border-violet-500"
-                title="Get Started Today"
-                icon={<FaLocationArrow />}
-                position="right"
-              />
-            </Link>
-          </div>
-        </div>
-      </section>
-    </section>
+      <a
+        className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+        href="#"
+      >
+      <Edit className='h-8 w-8'/>
+
+        <h2 className="mt-4 text-xl font-bold text-black">Edit Your form </h2>
+
+        <p className="mt-1 text-sm text-gray-600">
+          Easily edit your form to include additional questions, change the order of questions, or adjust the form &apos;s appearance.
+        </p>
+      </a>
+
+      <a
+        className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+        href="#"
+      >
+      <Share2 className='h-8 w-8' />
+
+        <h2 className="mt-4 text-xl font-bold text-black">Share & Start Accepting Responses</h2>
+
+        <p className="mt-1 text-sm text-gray-600">
+          Share your form with a unique link, and start collecting responses in real-time. Easily track and analyze responses.
+        </p>
+      </a>
+
+    
+    </div>
+
+    <div className="mt-12 text-center">
+      <a
+      href="/sign-in">
+        <MagicButton
+              otherClasses="border-2 border-violet-500"
+              
+              title="Get Started Today"
+              icon={<FaLocationArrow />}
+
+              position="right"
+              
+            />
+
+
+      </a>
+
+      
+    </div>
+  </div>
+</section>
+</section>
   );
 }
 
