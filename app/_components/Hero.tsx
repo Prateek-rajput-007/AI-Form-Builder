@@ -5,7 +5,7 @@ import { FaLocationArrow } from 'react-icons/fa';
 import { AtomIcon, Edit, Share2 } from 'lucide-react';
 import { Button } from "@/components/ui/moving-border";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { SignInButton, useUser } from '@clerk/nextjs'
+import { SignInButton, useUser } from '@clerk/nextjs';
 import { usePathname } from 'next/navigation';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
@@ -37,14 +37,10 @@ function Hero() {
             {isSignedIn ? (
               <Link href="/dashboard" passHref>
                 <Button
-                 duration={Math.floor(Math.random() * 1000) + 1000}
-                 borderRadius="1.95rem"
-                 style={{
-                   background: "rgb(2,0,36)",
-                   backgroundColor: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(15,70,179,1) 35%)",
-                   borderRadius: `calc(1.75rem * 0.96)`,
-                 }}
-                 className="block w-full rounded px-12 py-3 text-sm font-medium text-white shadow hover:bg-purple-700 focus:outline-none focus:ring active:bg-purple-500 sm:w-auto"
+                  duration={Math.floor(Math.random() * 1000) + 1000}
+                  borderRadius="1.95rem"
+                  style={{ borderRadius: `calc(1.75rem * 0.96)` }}
+                  className="rounded px-12 py-3 text-sm font-medium text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow hover:opacity-90 focus:outline-none focus:ring active:opacity-75"
                 >
                   Create Form
                 </Button>
@@ -54,12 +50,8 @@ function Hero() {
                 <Button
                   duration={Math.floor(Math.random() * 1000) + 1000}
                   borderRadius="1.95rem"
-                  style={{
-                    background: "rgb(2,0,36)",
-                    backgroundColor: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(15,70,179,1) 35%)",
-                    borderRadius: `calc(1.75rem * 0.96)`,
-                  }}
-                  className="block w-full rounded px-12 py-3 text-sm font-medium text-white shadow hover:bg-purple-700 focus:outline-none focus:ring active:bg-purple-500 sm:w-auto"
+                  style={{ borderRadius: `calc(1.75rem * 0.96)` }}
+                  className="rounded px-12 py-3 text-sm font-medium text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow hover:opacity-90 focus:outline-none focus:ring active:opacity-75"
                 >
                   Create Form
                 </Button>
