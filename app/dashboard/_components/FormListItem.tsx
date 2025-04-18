@@ -65,6 +65,7 @@ function FormListItem({ formRecord, jsonForm, refreshData }: FormListItemProps) 
             if (result) {
                 toast('Form Deleted!!!');
                 refreshData();
+                window.location.reload();
             }
         } catch (error) {
             console.error('Error deleting form:', error);
