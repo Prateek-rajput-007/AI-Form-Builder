@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { useUser } from '@clerk/nextjs';
 import { db } from '@/configs';
-import { JsonForms } from '@/configs/schema';
+import { JsonForms, userResponses } from '@/configs/schema';
 import { and, eq } from 'drizzle-orm';
 import { toast } from 'sonner';
 import { RWebShare } from 'react-web-share';
@@ -50,16 +50,25 @@ function FormListItem({ formRecord, jsonForm, refreshData }: FormListItemProps) 
     const { user } = useUser();
 
     const onDeleteForm = async () => {
-        const result = await db.delete(JsonForms)
-            .where(and(
-                eq(JsonForms.id, formRecord.id),
-                eq(JsonForms.createdBy, user?.primaryEmailAddress?.emailAddress)
-            ));
+        try {
+            // Delete related records in the userResponses table
+            await db.delete(userResponses)
+                .where(eq(userResponses.formRef, formRecord.id));
 
-        if (result) {
-            toast('Form Deleted!!!');
-            refreshData();
-            window.location.reload()
+            // Delete the form record in the jsonForms table
+            const result = await db.delete(JsonForms)
+                .where(and(
+                    eq(JsonForms.id, formRecord.id),
+                    eq(JsonForms.createdBy, user?.primaryEmailAddress?.emailAddress)
+                ));
+
+            if (result) {
+                toast('Form Deleted!!!');
+                refreshData();
+            }
+        } catch (error) {
+            console.error('Error deleting form:', error);
+            toast('Error deleting form!');
         }
     };
 
