@@ -121,7 +121,7 @@ function Hero() {
             </div>
 
             <div className="mt-12 text-center">
-              <Link href="/sign-in">
+              <Link href="/dashboard">
                 <MagicButton
                   otherClasses="border-2 border-violet-500"
                   title="Get Started Today"
