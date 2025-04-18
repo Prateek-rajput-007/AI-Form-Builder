@@ -36,23 +36,35 @@ function Hero() {
             {/* Authenticated / Non-authenticated CTA */}
             {isSignedIn ? (
               <Link href="/dashboard" passHref>
-                <Button
-                  duration={Math.floor(Math.random() * 1000) + 1000}
-                  borderRadius="1.95rem"
-                  style={{ borderRadius: `calc(1.75rem * 0.96)` }}
-                  className="rounded px-12 py-3 text-sm font-medium text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow hover:opacity-90 focus:outline-none focus:ring active:opacity-75"
-                >
+                 <Button
+                 duration={Math.floor(Math.random() * 1000) + 1000}
+            borderRadius="1.95rem" style={{
+              //   add these two
+              //   you can generate the color from here https://cssgradient.io/
+              background: "rgb(2,0,36)",
+              backgroundColor:
+                "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(15,70,179,1) 35%)",
+              // add this border radius to make it more rounded so that the moving border is more realistic
+              borderRadius: `calc(1.75rem* 0.96)`,
+            }}
+            className="block w-full rounded  px-12 py-3 text-sm font-medium text-white shadow hover:bg-purple-700 focus:outline-none focus:ring active:bg-purple-500 sm:w-auto">
                   Create Form
                 </Button>
               </Link>
             ) : (
               <SignInButton>
-                <Button
-                  duration={Math.floor(Math.random() * 1000) + 1000}
-                  borderRadius="1.95rem"
-                  style={{ borderRadius: `calc(1.75rem * 0.96)` }}
-                  className="rounded px-12 py-3 text-sm font-medium text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow hover:opacity-90 focus:outline-none focus:ring active:opacity-75"
-                >
+                  <Button
+                 duration={Math.floor(Math.random() * 1000) + 1000}
+            borderRadius="1.95rem" style={{
+              //   add these two
+              //   you can generate the color from here https://cssgradient.io/
+              background: "rgb(2,0,36)",
+              backgroundColor:
+                "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(15,70,179,1) 35%)",
+              // add this border radius to make it more rounded so that the moving border is more realistic
+              borderRadius: `calc(1.75rem* 0.96)`,
+            }}
+            className="block w-full rounded  px-12 py-3 text-sm font-medium text-white shadow hover:bg-purple-700 focus:outline-none focus:ring active:bg-purple-500 sm:w-auto">
                   Create Form
                 </Button>
               </SignInButton>
