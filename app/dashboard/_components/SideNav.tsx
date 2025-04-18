@@ -96,7 +96,6 @@ function SideNav() {
                 ))}
             </div>
             <div className='fixed bottom-7 p-6 w-64 '>
-                <Button className="w-full">+ Create Form</Button>
                 <div className='my-7'>
                     <Progress value={percFileCreated} />
                     <h2 className='text-sm mt-2 text-gray-600'>
