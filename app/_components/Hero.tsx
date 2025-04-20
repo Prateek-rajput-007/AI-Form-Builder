@@ -138,8 +138,6 @@
 // }
 
 // export default Hero;
-
-
 "use client";
 
 import { useUser, SignInButton } from '@clerk/nextjs';
@@ -168,11 +166,9 @@ function Hero() {
     visible: { transition: { staggerChildren: 0.2 } },
   };
 
-  const blobMotion = {
-    animate: {
-      y: [0, 20, 0],
-      transition: { repeat: Infinity, duration: 6, ease: 'easeInOut' },
-    },
+  const blobAnimation = {
+    y: [0, 20, 0],
+    transition: { repeat: Infinity, duration: 6, ease: 'easeInOut' },
   };
 
   return (
@@ -182,19 +178,15 @@ function Hero() {
       animate="visible"
       variants={stagger}
     >
-      {/* Decorative Blobs with Parallax */}
+      {/* Decorative Blobs with Floating Animation */}
       <motion.div
         className="absolute top-[-100px] right-[-100px] w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-purple-600 rounded-full blur-[180px] opacity-30"
-        variants={fadeInUp}
-        animate="animate"
-        variants={blobMotion}
-      ></motion.div>
+        animate={blobAnimation}
+      />
       <motion.div
         className="absolute bottom-[-100px] left-[-100px] w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-pink-500 rounded-full blur-[180px] opacity-30"
-        variants={fadeInUp}
-        animate="animate"
-        variants={blobMotion}
-      ></motion.div>
+        animate={blobAnimation}
+      />
 
       {/* Main Hero Content */}
       <motion.div
@@ -242,7 +234,7 @@ function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* --- Extra Space between sections --- */}
+      {/* Extra Space */}
       <div className="h-28 md:h-32 lg:h-40"></div>
 
       {/* How it Works Section */}
