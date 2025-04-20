@@ -96,75 +96,75 @@ import { useUser } from '@clerk/nextjs';
 import React from 'react';
 
 function Upgrade() {
-    const { user } = useUser();
+  const { user } = useUser();
 
-    return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 p-6 sm:p-8 md:p-10">
-            <div className="max-w-5xl mx-auto">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10">
-                    Upgrade Your Plan
-                </h2>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {PricingPlan.map((item, index) => (
-                        <div
-                            key={index}
-                            className="rounded-2xl border border-gray-700 bg-gray-800 p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
-                        >
-                            <div className="text-center">
-                                <h3 className="text-xl font-semibold text-gray-100">
-                                    {item.duration}
-                                </h3>
-                                <p className="mt-4">
-                                    <strong className="text-4xl font-bold text-white">
-                                        {item.price}$
-                                    </strong>
-                                    <span className="text-sm font-medium text-gray-400">
-                                        /{item.duration}
-                                    </span>
-                                </p>
-                            </div>
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 p-6 sm:p-8 md:p-10">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10">
+          Upgrade Your Plan
+        </h2>
 
-                            <ul className="mt-6 space-y-3">
-                                {Array.isArray(item.features) &&
-                                    item.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-center gap-2">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                strokeWidth="1.5"
-                                                stroke="currentColor"
-                                                className="h-5 w-5 text-green-500"
-                                            >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    d="M4.5 12.75l6 6 9-13.5"
-                                                />
-                                            </svg>
-                                            <span className="text-gray-300">{feature}</span>
-                                        </li>
-                                    ))}
-                            </ul>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {PricingPlan.map((item, index) => (
+            <div
+              key={index}
+              className="rounded-2xl border border-gray-700 bg-gray-800 p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-gray-100">
+                  {item.duration}
+                </h3>
+                <p className="mt-4">
+                  <strong className="text-4xl font-bold text-white">
+                    {item.price}$
+                  </strong>
+                  <span className="text-sm font-medium text-gray-400">
+                    /{item.duration}
+                  </span>
+                </p>
+              </div>
 
-                            <a
-                                href={
-                                    user?.primaryEmailAddress?.emailAddress
-                                        ? `${item.link}?prefilled_email=${user.primaryEmailAddress.emailAddress}`
-                                        : item.link
-                                }
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-8 block rounded-full bg-indigo-600 px-6 py-3 text-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                            >
-                                Get Started
-                            </a>
-                        </div>
-                    ))}
-                </div>
+              <ul className="mt-6 space-y-3">
+                {item.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="h-5 w-5 text-green-500"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5"
+                      />
+                    </svg>
+                    <span className="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={
+                  user?.primaryEmailAddress?.emailAddress
+                    ? `${item.link}?prefilled_email=${user.primaryEmailAddress.emailAddress}`
+                    : item.link
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 block rounded-full bg-indigo-600 px-6 py-3 text-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              >
+                Get Started
+              </a>
             </div>
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Upgrade;
