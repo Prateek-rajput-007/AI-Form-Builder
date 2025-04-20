@@ -205,7 +205,7 @@ function Hero() {
           The Future of Form Creation is Here ✨
         </h1>
         <p className="text-md md:text-xl lg:text-2xl text-gray-400 mb-10">
-          Build smart, responsive forms using AI in seconds. <br /> Focus on your ideas — we'll handle the forms.
+          Build smart, responsive forms using AI in seconds. <br /> Focus on your ideas — we will handle the forms.
         </p>
 
         <motion.div
