@@ -1,76 +1,79 @@
-<div align="center">
-  <br />
-  <a href="https://ai-form-generation.vercel.app/" target="_blank">
-    <img src="project-banner.png" alt="Project Banner">
-  </a>
-  <br />
 
-  <div>
-    <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
-    <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
-    <img src="https://img.shields.io/badge/-Next.js-black?style=for-the-badge&logoColor=white&logo=next.js&color=000000" alt="next.js" />
-    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
-    <img src="https://img.shields.io/badge/-Google_Gemini-black?style=for-the-badge&logoColor=white&logo=google&color=EA4335" alt="google gemini" />
-    <img src="https://img.shields.io/badge/-Stripe-black?style=for-the-badge&logoColor=white&logo=stripe&color=635bff" alt="stripe" />
-    <img src="https://img.shields.io/badge/-Clerk-black?style=for-the-badge&logoColor=white&logo=clerk&color=3b5998" alt="clerk" />
-    <img src="https://img.shields.io/badge/-Neon-black?style=for-the-badge&logoColor=white&logo=postgresql&color=2E8B57" alt="neon" />
-    <img src="https://img.shields.io/badge/-Drizzle_ORM-black?style=for-the-badge&logoColor=white&color=4A4A55" alt="drizzle orm" />
-    <img src="https://img.shields.io/badge/-Shadcn-black?style=for-the-badge&logoColor=white&color=48A9A6" alt="shadcn" />
-    <img src="https://img.shields.io/badge/-DaisyUI-black?style=for-the-badge&logoColor=white&logo=daisyui&color=5A67D8" alt="daisyui" />
-    <img src="https://img.shields.io/badge/-Eternity_UI-black?style=for-the-badge&logoColor=white&color=4B0082" alt="eternity ui" />
-  </div>
+# AI Form Builder 🚀
 
-  <h3 align="center">AI Form Builder - AI-Driven Form Generation SaaS</h3>
+AI Form Builder is a powerful and user-friendly application that allows you to create customized forms effortlessly. Powered by **Gemini AI API**, this Next.js application generates form fields based on simple prompts.  
+With secure authentication using **Clerk**, a responsive UI, and persistent data storage, AI Form Builder streamlines the form creation process while offering a seamless user experience.
 
-  <div align="center">
-    Experience the future of form creation with AI Form Builder, a SaaS platform that allows users to generate, edit, and share forms effortlessly using AI. With seamless integrations, advanced features, and a user-friendly interface, AI Form Builder is the ultimate tool for creating forms that can be shared via links, with responses exportable in XLSX format.
-  </div>
+## ✨ Features
 
-  <br />
+- 🔮 **AI-Powered Form Creation**: Generate complete forms based on user prompts.
+- 🔐 **Authentication**: Secure login/signup using **Clerk**.
+- 📊 **Admin Dashboard**: View and manage all form responses.
+- 🎨 **Theme Customization**: Choose from 6 different UI themes.
+- 💾 **Persistent Data Storage**: Built with **PostgreSQL** and **Drizzle ORM**.
+- 📱 **Responsive Design**: Mobile and desktop friendly using **Shadcn UI** and **Tailwind CSS**.
 
-  <div align="center">
-    <a href="https://ai-form-builder-007.vercel.app/" target="_blank">
-      <button style="background-color: #3178C6; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Open Application</button>
-    </a>
-  </div>
-</div>
+## 🛠️ Built With
 
-## 📋 <a name="table">Table of Contents</a>
+- [Next.js](https://nextjs.org/)
+- [Clerk](https://clerk.dev/)
+- [Shadcn UI](https://ui.shadcn.dev/)
+- [Gemini AI API](https://deepmind.google/technologies/gemini/)
+- [Drizzle ORM](https://orm.drizzle.team/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [DaisyUI](https://daisyui.com/)
 
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
+## 🚀 Getting Started
 
-## 🚨 About
+Follow these instructions to set up the project locally:
 
-AI Form Builder is a comprehensive SaaS web application that leverages the power of AI to streamline the process of form creation. Whether you need to create simple surveys or complex data collection forms, AI Form Builder makes it easy to generate, edit, and share forms.
+### Prerequisites
 
-## <a name="introduction">🤖 Introduction</a>
+- Node.js
+- npm or yarn
+- PostgreSQL database
+- Clerk API keys
+- Gemini AI API Key
 
-With AI Form Builder, you can effortlessly create forms using AI-driven prompts. The platform integrates advanced AI models to help generate form fields and layouts. It offers a robust dashboard for managing existing forms, sharing them via links, and collecting user responses, which can be exported in XLSX format. The application also includes a phenomenal landing page, supports various user authentication and payment gateway options, and is designed to cater to both free and pro users.
+### Installation
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/your-username/ai-form-builder.git
+   cd ai-form-builder
+   ```
 
-- **Google Gemini API**: AI functionalities.
-- **Clerk**: User authentication.
-- **Neon**: Database management.
-- **Drizzle ORM**: Database interactions.
-- **TypeScript with Next.js**: Core application framework.
-- **Shadcn**: Component library.
-- **DaisyUI**: Component library.
-- **Eternity UI**: Component library.
-- **Stripe**: Payment gateway.
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-## <a name="features">🔋 Features</a>
+3. **Set up environment variables**
 
-👉 **AI-Driven Form Generation**: Create forms with AI assistance, saving time and effort.
+Create a `.env.local` file and add:
 
-👉 **Editable Forms**: Easily edit existing forms and share them with others.
+```bash
+DATABASE_URL=your_postgresql_database_url
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
+CLERK_FRONTEND_API=your_clerk_frontend_api
+CLERK_API_KEY=your_clerk_api_key
+GEMINI_API_KEY=your_gemini_api_key
+```
 
-👉 **Response Management**: Collect and manage responses, with the option to export data in XLSX format.
+4. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-👉 **Seamless Integrations**: Incorporates authentication, payment gateways, and a user-friendly dashboard.
+Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
-👉 **Phenomenal Landing Page**: A modern and engaging landing page to attract users.
 
-👉 **Pro and Free Plans**: Offers different plans to suit various user needs.
+## 🔥 Live Demo
+
+Check out the deployed version here:  
+👉 [https://ai-form-builder-007.vercel.app/](https://ai-form-builder-007.vercel.app/)
